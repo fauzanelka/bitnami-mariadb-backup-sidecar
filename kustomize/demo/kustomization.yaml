@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: scopic-software
+namePrefix: demo-
+images:
+  - name: ghcr.io/fauzanelka/bitnami-mariadb-backup-sidecar:1
+    newTag: '11.2-debian-11'
+resources:
+  - secret/bitnami-mariadb-backup-sidecar.yaml
+  - ../base
